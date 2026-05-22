@@ -199,6 +199,15 @@ int main(void)
 		  }
 	  }
 
+	  //reset the dma for the next transfer in case of total_data a multiple of 256
+	  else if ((indx == dataLength) && ((HTC==1)||(FTC==1)))
+	  {
+		  isSizeReceived = 0;
+		  HTC = 0;
+		  FTC = 0;
+		  HAL_UART_DMAStop(&huart2);
+		  HAL_UART_Receive_DMA(&huart2, RxData, 256);
+	  }
 
 	  //blink LED every 500ms, cpu free cause dma
 	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
