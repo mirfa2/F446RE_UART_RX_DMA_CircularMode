@@ -148,7 +148,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  //dma rx in circularmode, receive data in chunks of 256 bytes
+  //start dma rx in circularmode, expects a chunk of 256 bytes. use formatted .bin files, data_length is already written in there
   HAL_UART_Receive_DMA(&huart2, RxData, 256);
 
   /* USER CODE END 2 */
