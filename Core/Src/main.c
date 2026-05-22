@@ -103,6 +103,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+	  //blink LED every 500ms
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+	  HAL_Delay(500);
+
   }
   /* USER CODE END 3 */
 }
