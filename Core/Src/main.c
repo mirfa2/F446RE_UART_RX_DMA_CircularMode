@@ -59,6 +59,10 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+	//if we dont know how much total_data to receive (total_data including the header data like the data_length data)
+	//eg continuous data stream, or if the mcu doesnt have enough sram to store the data eg; receive video in Mbytes
+	//
+
 /* USER CODE END 0 */
 
 /**
